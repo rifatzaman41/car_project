@@ -1,0 +1,10 @@
+{% extends 'home.html' %}
+<h1>{{ car.name }}</h1>
+<p>{{ car.description }}</p>
+<p>Price: ${{ car.price }}</p>
+<p>Quantity: {{ car.quantity }}</p>
+{% if car.quantity > 0 %}
+    <a href="{% url 'buy-now' car.id %}">Buy Now</a>
+{% else %}
+    <p>Out of stock</p>
+{% endif %}
